@@ -4,8 +4,6 @@ import Links from "./Links/Links"
 import "./sidebar.scss"
 import ToggleButton from "./toggleButton/ToggleButton"
 
-const Sidebar = () => {
-    const [open,setOpen] = useState(false)
 
     const variants ={
         open:{
@@ -25,6 +23,10 @@ const Sidebar = () => {
             }
         }
     }
+
+    
+const Sidebar = () => {
+    const [open,setOpen] = useState(false)
 
   return (
     <motion.div className="sidebar" animate={open? "open" : "closed"}>
