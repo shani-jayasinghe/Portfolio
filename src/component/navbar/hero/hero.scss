@@ -16,7 +16,7 @@
             flex-direction: column;
             justify-content: center;
             gap: 40px;
-
+                        
             h2{
                 font-size: 20px;
                 color: rebeccapurple;
@@ -42,7 +42,7 @@
             }
 
             img{
-                width: 20px
+                width: 30px
             }
         }
     }
@@ -50,7 +50,7 @@
 
     .imageContainer{
         height: 100%;
-        width: 70%;
+        width: 60%;
         position: absolute;
         top: 0;
         right: 0;
