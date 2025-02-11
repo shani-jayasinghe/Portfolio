@@ -15,7 +15,57 @@
             background-color: white;
 
         }
+    }
 
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        .wrapper{
+            max-width: 1366px;
+            height: 100;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 50px;
+
+        .imgeContainer{
+            flex: 1;
+            height: 100%;
+        
+    
+        img{
+        width: 400px;
+        height: 250px;
+        object-fit: cover;
+        justify-content: space-between;
+        }
+        }
+
+       .textContainer{
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+         text-align: left;
+         gap: 20px;
+         justify-content: space-between;
+
+         h2{
+           font-style: 72px;                     
+         }
+
+         p{
+            color: gray;
+            font-size: 20px;
+         }
+          
+        }
+      }
     }
 
 }

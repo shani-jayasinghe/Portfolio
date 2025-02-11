@@ -1,19 +1,19 @@
 import "./portfolio.scss"
-import { motion, useScroll, useSpring} from "framer-motion"
+import { motion, useScroll, useSpring, useTransform} from "framer-motion"
 import { useRef } from "react"
 
 const items = [
   {
     id: 1,
     title: "Blog App",
-    img: "animated-portfolio/public/blog.PNG",
+    img: "/blog.PNG",
     desc: "UniBlog app is the blogging platform for university student to share their ideas and informations.. "
   },
 
   {
     id: 2,
     title: "Blog App",
-    img: "animated-portfolio/public/blog.PNG",
+    img: "/Pizza.jpg",
     desc: "UniBlog app is the blogging platform for university student to share their ideas and informations.. "
   },
 
@@ -33,8 +33,31 @@ const items = [
 ];
 
 const Single =({ item }) => {
-  return<section>{item.title}</section>;
-}
+  const ref = useRef();
+
+  const { scrollYProgress } = useScroll ({ 
+    target: ref,
+   });
+
+   const y = useTransform (scrollYProgress, [0,1], [-100, 100]);
+
+  return ( 
+  <section >
+    <div className="container">
+      <div className="wrapper">
+        <div className="imgeContainer" ref = {ref}>
+      <img src={item.img} alt=""/>
+      <motion.div className="textContainer" style={{y}} >
+        <h2>{item.title}</h2>
+        <p>{item.desc}</p>
+      </motion.div>
+       </div>
+      </div>
+    </div>
+  </section>
+  );
+};
+
 const Portfolio = () => {
   const ref = useRef();
 
